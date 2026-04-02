@@ -1,0 +1,11 @@
+# Ignore heavy files
+*.h5
+*.ipynb
+
+# Ignore virtual environment folders
+Lib/
+Scripts/
+venv/
+
+# Ignore datasets
+Biscuit Wrapper Dataset/
