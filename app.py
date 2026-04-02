@@ -5,18 +5,17 @@ import tensorflow as tf
 import os, requests
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.image import img_to_array
-
+import gdown
 app = Flask(__name__)
 
 MODEL_PATH = "biscuit_model.h5"
-MODEL_URL = "https://drive.google.com/uc?id=1ugX8u_Y5ODuyGH1C_wuv5g3xf2u5J75s&export=download"
+MODEL_URL = "https://drive.google.com/uc?id=1ugX8u_Y5ODuyGH1C_wuv5g3xf2u5J75s"
 
 if not os.path.exists(MODEL_PATH):
     print("Downloading model from external host...")
-    response = requests.get(MODEL_URL)
-    with open(MODEL_PATH, "wb") as f:
-        f.write(response.content)
+    gdown.download(MODEL_URL, MODEL_PATH, quiet=False)
     print("✅ Model downloaded")
+
 
 model = tf.keras.models.load_model(MODEL_PATH)
 
