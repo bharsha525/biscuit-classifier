@@ -3,7 +3,7 @@ from PIL import Image
 import numpy as np
 import os
 import gdown
-import tflite_runtime.interpreter as tflite
+import tensorflow as tf
 
 app = Flask(__name__)
 
@@ -15,8 +15,8 @@ if not os.path.exists(MODEL_PATH):
     gdown.download(MODEL_URL, MODEL_PATH, quiet=False)
     print("✅ Model downloaded")
 
-# Load TFLite model
-interpreter = tflite.Interpreter(model_path=MODEL_PATH)
+# Load TFLite model using tensorflow
+interpreter = tf.lite.Interpreter(model_path=MODEL_PATH)
 interpreter.allocate_tensors()
 
 input_details = interpreter.get_input_details()
@@ -83,6 +83,3 @@ def predict():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
-
-
-
