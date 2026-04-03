@@ -7,15 +7,15 @@ import tensorflow as tf
 
 app = Flask(__name__)
 
-MODEL_PATH = "biscuit_model.tflite"
-MODEL_URL = "https://drive.google.com/uc?id=19LaGqB6QSomzbUKCD7ESUx1ERRKjsRpY"
+MODEL_PATH = "biscuit_model_v2.tflite"
+MODEL_URL = "https://drive.google.com/uc?id=1AzGm3DhynGS0IXp1ZzsCOsPNsiMiWsTd"
 
 if not os.path.exists(MODEL_PATH):
     print("Downloading TFLite model...")
     gdown.download(MODEL_URL, MODEL_PATH, quiet=False)
     print("✅ Model downloaded")
 
-# Load TFLite model using tensorflow
+# Load TFLite model
 interpreter = tf.lite.Interpreter(model_path=MODEL_PATH)
 interpreter.allocate_tensors()
 
