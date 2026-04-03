@@ -1,5 +1,5 @@
 gunicorn
-tensorflow-cpu
+tflite-runtime
 flask
 requests
 numpy
