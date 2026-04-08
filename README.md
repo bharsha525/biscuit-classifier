@@ -22,19 +22,19 @@ The app displays the predicted brand with a confidence score
 
 PROJECT STRUCTURE
 biscuit-classifier/
-│
-├── app.py                  # Flask backend
-├── requirements.txt        # Python dependencies
-├── runtime.txt             # Python version
-├── templates/
-│   └── index.html          # Frontend UI
-├── static/
-│   └── style.css           # Styling
-├── screenshots/            # App screenshots (for README)
-│   ├── home.png
-│   └── result.png
-|   |__ prediction.png
-└── biscuit.ipynb           # Model training notebook
+   │
+   ├── app.py                  # Flask backend
+   ├── requirements.txt        # Python dependencies
+   ├── runtime.txt             # Python version
+   ├── templates/
+       └── index.html          # Frontend UI
+   ├── static/
+   │   └── style.css           # Styling
+   ├── screenshots/            # App screenshots (for README)
+   │   ├── home.png
+   │   └── result.png
+   |   |__ prediction.png
+   └── biscuit.ipynb           # Model training notebook
 
 
 Supported Biscuit Brands (100 Classes)
